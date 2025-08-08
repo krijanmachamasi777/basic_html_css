@@ -37,9 +37,15 @@
 
         }
         function copy(){
-            passwordbox.select();
-            document.execCommand('copy');
-            alert('Password copied to clipboard');
+navigator.clipboard.writeText(passwordbox.value)
+  .then(() => {
+    console.log('Password copied to clipboard');
+  })
+  .catch(err => {
+    console.error('Failed to copy: ', err);
+  });
+
+            alert('Password  copied to clipboard');
         }
     </script>
 </body>
